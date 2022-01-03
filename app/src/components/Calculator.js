@@ -22,7 +22,7 @@ function Calculator(props) {
             <ExpenseCategory name="Savings">
                 <AmountInput name="Savings" />
             </ExpenseCategory>
-            
+
         </div>
     );
 }
