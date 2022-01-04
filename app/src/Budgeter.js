@@ -34,11 +34,6 @@ class Budgeter extends React.Component{
   }
 
   render() {
-    {/* Debugging */}
-    console.log(this.state.paycheck);
-    console.log(this.state.fixedExpenses);
-    console.log(this.state.savings);
-    console.log('---------')
     return (
       <div>
         <AmountInput name="paycheck"
