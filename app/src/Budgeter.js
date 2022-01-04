@@ -9,22 +9,46 @@ class Budgeter extends React.Component{
     this.state = {
       paycheck: '1000',
       fixedExpenses: [
-        {name: 'first', amount: '100'},
-        {name: 'second', amount: '200'},
-        {name: 'third', amount: '300'},
+        {name: 'first', amount: '100', id: 0},
       ],
-      savings: '300',
+      savings: '200',
     }
   }
 
+  handlePaycheckChange = (value) => {
+    this.setState({
+      paycheck: value,
+    })
+  }
+
+  handleSavingsChange = (value) => {
+    this.setState ({
+      savings: value,
+    })
+  }
+
+  handleFixedChange = (values) => {
+    this.setState ({
+      fixedExpenses: values,
+    })
+  }
+
   render() {
+    {/* Debugging */}
+    console.log(this.state.paycheck);
+    console.log(this.state.fixedExpenses);
+    console.log(this.state.savings);
+    console.log('---------')
     return (
       <div>
-        <AmountInput name="paycheck" value={this.state.paycheck}/>
+        <AmountInput name="paycheck"
+        value={this.state.paycheck}
+        onChange={this.handlePaycheckChange} />
+
         <Calculator 
         paycheck={this.state.paycheck} 
-        fixedExpenses={this.state.fixedExpenses} 
-        savingsAmount={this.state.savings} />
+        fixedExpenses={this.state.fixedExpenses} onFixedChange={this.handleFixedChange}
+        savingsAmount={this.state.savings} onSavingsChange={this.handleSavingsChange} />
       </div>
     );
   }

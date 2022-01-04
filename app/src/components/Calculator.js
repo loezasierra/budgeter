@@ -19,11 +19,11 @@ function Calculator(props) {
             </div>
 
             <ExpenseCategory name="Fixed Expenses">
-                <FlexAmounts name="Fixed Expenses" values={props.fixedExpenses} />
+                <FlexAmounts name="Fixed Expenses" values={props.fixedExpenses} onChanges={props.onFixedChange} />
             </ExpenseCategory>
 
             <ExpenseCategory name="Savings">
-                <AmountInput name="Savings" value={props.savingsAmount} />
+                <AmountInput name="Savings" value={props.savingsAmount} onChange={props.onSavingsChange} />
             </ExpenseCategory>
 
         </div>
@@ -35,14 +35,14 @@ function calculateFixed(expenses) {
     for (let i = 0, n = expenses.length; i < n; i++) {
         total += parseFloat(expenses[i].amount) * 100;
     }
-    return total * .01;
+    return total / 100;
 }
 
 function calculateVariable(paycheck, fixed, savings) {
     paycheck = parseFloat(paycheck) * 100;
     fixed = parseFloat(fixed) * 100;
     savings = parseFloat(savings) * 100;
-    return (paycheck - (fixed + savings)) * .01;
+    return (paycheck - (fixed + savings)) / 100;
 }
 
 export default Calculator;
