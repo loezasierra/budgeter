@@ -3,11 +3,12 @@ import LabledAmountInput from './LabledAmountInput';
 import Button from './Button';
 
 function FlexAmounts(props) {
+    const values = props.values;
     return (
         <div>
-            <LabledAmountInput name="first" />
-            <LabledAmountInput name="second" />
-            <LabledAmountInput name="third" />
+            {values.map((value) =>
+                <LabledAmountInput name={value.name} value={value.amount} />
+            )}
             <Button name="+" />
         </div>
     );

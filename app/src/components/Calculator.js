@@ -6,25 +6,43 @@ import FlexAmounts from './FlexAmounts';
 
 
 function Calculator(props) {
+    const totalFixed = calculateFixed(props.fixedExpenses);
+    const variableAmount = calculateVariable(props.paycheck, totalFixed, props.savingsAmount);
+
     return (
         <div className="calculator">
 
             <div className="calculations">
-                <Calculation name="Fixed Expenses" />
-                <Calculation name="Savings" />
-                <Calculation name="Variable Allowance" />
+                <Calculation name="Fixed Expenses" value={totalFixed}/>
+                <Calculation name="Savings" value={props.savingsAmount} />
+                <Calculation name="Variable Allowance" value={variableAmount} />
             </div>
 
             <ExpenseCategory name="Fixed Expenses">
-                <FlexAmounts name="Fixed Expenses" />
+                <FlexAmounts name="Fixed Expenses" values={props.fixedExpenses} />
             </ExpenseCategory>
 
             <ExpenseCategory name="Savings">
-                <AmountInput name="Savings" />
+                <AmountInput name="Savings" value={props.savingsAmount} />
             </ExpenseCategory>
 
         </div>
     );
+}
+
+function calculateFixed(expenses) {
+    let total = 0;
+    for (let i = 0, n = expenses.length; i < n; i++) {
+        total += parseFloat(expenses[i].amount) * 100;
+    }
+    return total * .01;
+}
+
+function calculateVariable(paycheck, fixed, savings) {
+    paycheck = parseFloat(paycheck) * 100;
+    fixed = parseFloat(fixed) * 100;
+    savings = parseFloat(savings) * 100;
+    return (paycheck - (fixed + savings)) * .01;
 }
 
 export default Calculator;

@@ -3,8 +3,8 @@ import React from 'react';
 function Calculation(props) {
     return (
         <div className="calculation">
-            <p>Calculation for {props.name}:</p>
-            <p>$1000</p>
+            <p>{props.name}:</p>
+            <p>${props.value}</p>
         </div>
     );
 }
