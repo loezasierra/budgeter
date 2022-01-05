@@ -26,6 +26,7 @@ function FlexAmounts(props) {
         for (let i = 0, n = values.length; i < n; i++) {
             if (values[i].id === id) {
                 values.splice(i, 1);
+                props.onChanges(values);
             }
         }
         props.onChanges(values);
