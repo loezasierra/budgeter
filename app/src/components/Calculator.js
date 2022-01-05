@@ -33,15 +33,16 @@ function Calculator(props) {
 function calculateFixed(expenses) {
     let total = 0;
     for (let i = 0, n = expenses.length; i < n; i++) {
-        total += parseFloat(expenses[i].amount) * 100;
+        let amount = parseFloat(expenses[i].amount) * 100;
+        total += parseInt(amount);
     }
     return total / 100;
 }
 
 function calculateVariable(paycheck, fixed, savings) {
-    paycheck = parseFloat(paycheck) * 100;
-    fixed = parseFloat(fixed) * 100;
-    savings = parseFloat(savings) * 100;
+    paycheck = parseInt(parseFloat(paycheck) * 100);
+    fixed = parseInt(parseFloat(fixed) * 100);
+    savings = parseInt(parseFloat(savings) * 100);
     return (paycheck - (fixed + savings)) / 100;
 }
 

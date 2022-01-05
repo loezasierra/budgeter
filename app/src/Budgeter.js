@@ -9,7 +9,8 @@ class Budgeter extends React.Component{
     this.state = {
       paycheck: '1000',
       fixedExpenses: [
-        {name: 'first', amount: '100', id: 0},
+        {name: 'first', amount: '100.835', id: 0},
+        {name: 'second', amount: '200.942', id: 1},
       ],
       savings: '200',
     }
