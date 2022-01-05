@@ -2,11 +2,11 @@ import React from 'react';
 import AmountInput from './AmountInput';
 
 function LabledAmountInput(props) {
-    let handleNameChange = (e) => {
+    const handleNameChange = (e) => {
         props.onNameChange(e.target.value)
     };
 
-    let handleAmountChange = (value) => {
+    const handleAmountChange = (value) => {
         props.onAmountChange(value)
     };
 

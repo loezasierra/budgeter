@@ -1,7 +1,7 @@
 import React from 'react';
 
 function AmountInput(props) {
-    let handleChange = (e) => {
+    const handleChange = (e) => {
         props.onChange(e.target.value);
     }
     

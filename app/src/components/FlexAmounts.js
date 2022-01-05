@@ -6,19 +6,19 @@ function FlexAmounts(props) {
     const handleNameChange = (index, value) => {
         const values = [...props.values];
         values[index].name = value;
-        props.onChanges(values);
+        return props.onChanges(values);
     }
 
     const handleAmountChange = (index, value) => {
         const values = [...props.values];
         values[index].amount = value;
-        props.onChanges(values);
+        return props.onChanges(values);
     }
 
     const handleNewAmount = () => {
         const values = [...props.values];
         values.push({name: '', amount: '', id:((values[values.length - 1].id) + 1)});
-        props.onChanges(values);
+        return props.onChanges(values);
     }
 
     const handleDeleteAmount = (id) => {
@@ -26,10 +26,10 @@ function FlexAmounts(props) {
         for (let i = 0, n = values.length; i < n; i++) {
             if (values[i].id === id) {
                 values.splice(i, 1);
-                props.onChanges(values);
+                return props.onChanges(values);
             }
         }
-        props.onChanges(values);
+        return props.onChanges(values);
     }
 
     const values = props.values;
