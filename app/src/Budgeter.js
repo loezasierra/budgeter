@@ -1,4 +1,4 @@
-// import './App.css';
+import './Budgeter.css';
 import React from 'react';
 import AmountInput from './components/AmountInput'
 import Calculator from './components/Calculator';
