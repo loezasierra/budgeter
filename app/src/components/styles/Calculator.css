@@ -1,0 +1,14 @@
+
+.calculator {
+    padding: 1rem;
+    border: .3rem solid var(--primary-dark);
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.calculations > :first-child {
+    margin-top: 0;
+}

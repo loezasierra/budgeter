@@ -1,0 +1,5 @@
+
+.labledamountinput > *{
+    display: inline-block;
+    margin-right: .3rem;
+}

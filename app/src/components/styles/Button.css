@@ -1,0 +1,11 @@
+
+.button {
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary-dark);
+    border-radius: .1rem;
+    min-width: 2rem;
+}
+
+.button:hover {
+    background-color: var(--secondary-dark);
+}

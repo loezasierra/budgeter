@@ -1,0 +1,9 @@
+
+.flexamount > * {
+    display: inline;
+    margin-bottom: 1rem;
+}
+
+.newamount-wrapper > * {
+    width: 100%;
+}

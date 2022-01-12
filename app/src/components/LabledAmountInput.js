@@ -1,5 +1,6 @@
 import React from 'react';
 import AmountInput from './AmountInput';
+import './styles/LabledAmountInput.css'
 
 function LabledAmountInput(props) {
     const handleNameChange = (e) => {
@@ -11,12 +12,12 @@ function LabledAmountInput(props) {
     };
 
     return (
-        <form>
-            <input name={props.name} type="text" value={props.name} onChange={handleNameChange} />
+        <div className="labledamountinput">
+            <input name={props.name} type="text" value={props.name} onChange={handleNameChange} className="input"/>
             <AmountInput name={props.name} 
             value={props.value} 
             onChange={handleAmountChange} />
-        </form>
+        </div>
     )
 }
 

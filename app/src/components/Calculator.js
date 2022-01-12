@@ -3,6 +3,7 @@ import Calculation from "./Calculation";
 import ExpenseCategory from './ExpenseCategory';
 import AmountInput from './AmountInput';
 import FlexAmounts from './FlexAmounts';
+import './styles/Calculator.css'
 
 
 function Calculator(props) {

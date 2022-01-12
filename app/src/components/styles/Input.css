@@ -1,0 +1,19 @@
+
+.input {
+    background-color: transparent;
+    color: var(--secondary-light);
+
+    width: auto;
+
+    padding: .3rem .6rem;
+    border: 1px solid var(--primary-light);
+    border-radius: .1rem;
+}
+
+.input:focus {
+    border: 1px solid var(--secondary);
+}
+
+.input:focus-visible {
+    outline: 0;
+}

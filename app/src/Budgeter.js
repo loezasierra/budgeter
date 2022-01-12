@@ -36,10 +36,13 @@ class Budgeter extends React.Component{
 
   render() {
     return (
-      <div>
-        <AmountInput name="paycheck"
-        value={this.state.paycheck}
-        onChange={this.handlePaycheckChange} />
+      <div className="main">
+        <div className="paycheck">
+          <h2>Paycheck: </h2>
+          <AmountInput name="paycheck"
+          value={this.state.paycheck}
+          onChange={this.handlePaycheckChange} />
+        </div>
 
         <Calculator 
         paycheck={this.state.paycheck} 
