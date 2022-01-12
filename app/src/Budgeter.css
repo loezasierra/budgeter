@@ -10,6 +10,6 @@
     display: inline-block;
 }
 
-.paycheck :nth-child(1) {
+.paycheck > :nth-child(1) {
     margin-right: 1rem;
 }

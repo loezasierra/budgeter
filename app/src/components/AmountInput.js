@@ -8,7 +8,15 @@ function AmountInput(props) {
     }
     
     return (
-        <input name={props.name} type="number" onChange={handleChange} value={props.value} className="amountinput input" />
+        <div className="input-wrapper">
+            <span>$</span>
+            <input 
+                name={props.name} type="number" 
+                onChange={handleChange} 
+                value={props.value} 
+                className="amountinput input" 
+            />
+        </div>
     );
 }
 
