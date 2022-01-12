@@ -22,6 +22,7 @@ function LabledAmountInput(props) {
                     value={props.name} 
                     onChange={handleNameChange} 
                     className="input"
+                    placeholder="Name"
                 />
             </div>
 
