@@ -2,6 +2,8 @@ import './Budgeter.css';
 import React from 'react';
 import AmountInput from './components/AmountInput'
 import Calculator from './components/Calculator';
+import Hideable from './components/Hideable';
+import SubmitTextarea from './components/SubmitTextarea';
 
 class Budgeter extends React.Component{
   constructor(props) {
@@ -13,6 +15,7 @@ class Budgeter extends React.Component{
         {name: 'second', amount: '200.942', id: 1},
       ],
       savings: '200',
+      showIO: 0,
     }
   }
 
@@ -34,6 +37,16 @@ class Budgeter extends React.Component{
     })
   }
 
+  handleIOVisibility = (visibility) => {
+    this.setState({
+      showIO: visibility,
+    })
+  }
+
+  handleStateInput = (state) => {
+    this.setState(JSON.parse(state));
+  }
+
   render() {
     return (
       <div className="main">
@@ -48,6 +61,11 @@ class Budgeter extends React.Component{
         paycheck={this.state.paycheck} 
         fixedExpenses={this.state.fixedExpenses} onFixedChange={this.handleFixedChange}
         savingsAmount={this.state.savings} onSavingsChange={this.handleSavingsChange} />
+
+        <Hideable name="Import & Export" 
+        visibility={this.state.showIO} onVisibilityChange={this.handleIOVisibility}>
+          <SubmitTextarea defaultValue={JSON.stringify(this.state)} onClick={this.handleStateInput} />
+        </Hideable>
       </div>
     );
   }
