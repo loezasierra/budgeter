@@ -9,12 +9,11 @@ class Budgeter extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      paycheck: '1000',
+      paycheck: '',
       fixedExpenses: [
-        {name: 'first', amount: '200.835', id: 0},
-        {name: 'second', amount: '100.942', id: 1},
+        {name: '', amount: '', id: Date.now()},
       ],
-      savings: '200',
+      savings: '',
       showIO: 0,
     }
   }
