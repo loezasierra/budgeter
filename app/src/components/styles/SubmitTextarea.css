@@ -1,0 +1,5 @@
+
+.submittextarea textarea{
+    width: 100%;
+    background-color: var(--secondary-light);
+}

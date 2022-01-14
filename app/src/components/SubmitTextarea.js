@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import './styles/SubmitTextarea.css';
 
 function SubmitTextarea(props) {
     let textInput = React.createRef();
@@ -9,7 +10,7 @@ function SubmitTextarea(props) {
     }
 
     return (
-        <div>
+        <div className="submittextarea">
             <textarea ref={textInput} defaultValue={props.defaultValue} />
             <Button name="Import" onClick={handleClick} />
         </div>

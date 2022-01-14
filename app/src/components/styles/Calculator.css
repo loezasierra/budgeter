@@ -1,5 +1,6 @@
 
 .calculator {
+    margin-bottom: 1rem;
     padding: 1rem;
     border: .3rem solid var(--primary-dark);
     border-radius: 1rem;
