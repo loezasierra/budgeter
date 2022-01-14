@@ -8,14 +8,15 @@ import './styles/Calculator.css'
 
 function Calculator(props) {
     const totalFixed = calculateFixed(props.fixedExpenses);
-    const variableAmount = calculateVariable(props.paycheck, totalFixed, props.savingsAmount);
+    const savings = parseInt(props.savingsAmount)
+    const variableAmount = calculateVariable(props.paycheck, totalFixed, savings);
 
     return (
         <div className="calculator">
 
             <div className="calculations">
                 <Calculation name="Fixed Expenses" value={totalFixed}/>
-                <Calculation name="Savings" value={props.savingsAmount} />
+                <Calculation name="Savings" value={savings} />
                 <Calculation name="Variable Allowance" value={variableAmount} />
             </div>
 
