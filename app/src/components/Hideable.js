@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
+
 function Hideable(props) {
     let visibilityText;
     let children;

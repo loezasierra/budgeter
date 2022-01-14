@@ -1,7 +1,8 @@
 import React from 'react';
 import LabledAmountInput from './LabledAmountInput';
 import Button from './Button';
-import './styles/FlexAmounts.css'
+import './styles/FlexAmounts.css';
+
 
 function FlexAmounts(props) {
     const handleNameChange = (index, value) => {
@@ -26,7 +27,7 @@ function FlexAmounts(props) {
         const values = [...props.values];
         for (let i = 0, n = values.length; i < n; i++) {
             if (values[i].id === id) {
-                if (values.length == 1){
+                if (n == 1){
                     return props.onChanges(values);
                 } else {
                     values.splice(i, 1);
@@ -40,11 +41,14 @@ function FlexAmounts(props) {
     const values = props.values;
     const amounts = values.map((value, index) => (
             <div key={value.id} className="flexamount" >
-                <LabledAmountInput key={value.id} name={value.name} value={value.amount} 
-                onNameChange={(value) => handleNameChange(index, value)} onAmountChange={(value) => handleAmountChange(index, value)}/> 
-                <Button key={String(value.id) + 'delete'} name="-" onClick={() => handleDeleteAmount(value.id)} />
-            </div>)
-    );
+                <LabledAmountInput key={value.id} name={value.name} 
+                value={value.amount} 
+                onNameChange={(value) => handleNameChange(index, value)} 
+                onAmountChange={(value) => handleAmountChange(index, value)} /> 
+                <Button key={String(value.id) + 'delete'} name="-" 
+                onClick={() => handleDeleteAmount(value.id)} />
+            </div>
+    ));
 
     return (
         <div className="flexamounts">

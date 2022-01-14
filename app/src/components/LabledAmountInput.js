@@ -3,6 +3,7 @@ import AmountInput from './AmountInput';
 import './styles/Input.css';
 import './styles/LabledAmountInput.css';
 
+
 function LabledAmountInput(props) {
     const handleNameChange = (e) => {
         props.onNameChange(e.target.value)

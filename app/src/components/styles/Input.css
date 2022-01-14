@@ -19,14 +19,3 @@
 .input:focus-visible {
     outline: 0;
 }
-
-/*  
-.input {
-
-    width: auto;
-}
-
-.input:focus {
-    border: 1px solid var(--secondary);
-}
-*/

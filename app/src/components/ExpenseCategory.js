@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/ExpenseCategory.css';
 
+
 function ExpenseCategory(props) {
     return(
         <div className='category'>
