@@ -18,7 +18,7 @@ function FlexAmounts(props) {
 
     const handleNewAmount = () => {
         const values = [...props.values];
-        values.push({name: '', amount: '', id:((values[values.length - 1].id) + 1)});
+        values.push({name: '', amount: '', id: Date.now() });
         return props.onChanges(values);
     }
 
