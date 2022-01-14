@@ -11,8 +11,8 @@ class Budgeter extends React.Component{
     this.state = {
       paycheck: '1000',
       fixedExpenses: [
-        {name: 'first', amount: '100.835', id: 0},
-        {name: 'second', amount: '200.942', id: 1},
+        {name: 'first', amount: '200.835', id: 0},
+        {name: 'second', amount: '100.942', id: 1},
       ],
       savings: '200',
       showIO: 0,
@@ -32,8 +32,9 @@ class Budgeter extends React.Component{
   }
 
   handleFixedChange = (values) => {
+    let sortedValues = values.sort((a, b) => {return b.amount - a.amount});
     this.setState ({
-      fixedExpenses: values,
+      fixedExpenses: sortedValues,
     })
   }
 
