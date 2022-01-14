@@ -35,7 +35,12 @@ function Calculator(props) {
 function calculateFixed(expenses) {
     let total = 0;
     for (let expense of expenses) {
-        total += parseInt(expense.amount);
+        let amount = parseInt(expense.amount);
+        if (isNaN(amount)) {
+            total += 0;
+        } else {
+            total += amount;
+        }
     }
     return total;
 }
@@ -44,7 +49,13 @@ function calculateVariable(paycheck, fixed, savings) {
     paycheck = parseInt(paycheck);
     fixed = parseInt(fixed);
     savings = parseInt(savings);
-    return (paycheck - (fixed + savings));
+
+    let calculation = paycheck - (fixed + savings)
+    if (isNaN(calculation)) {
+        return 0;
+    } else {
+        return calculation;
+    }
 }
 
 export default Calculator;
