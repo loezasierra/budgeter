@@ -8,7 +8,7 @@ import './styles/Calculator.css'
 
 function Calculator(props) {
     const totalFixed = calculateFixed(props.fixedExpenses);
-    const savings = parseInt(props.savingsAmount)
+    const savings = formatSavings(props.savingsAmount);
     const variableAmount = calculateVariable(props.paycheck, totalFixed, savings);
 
     return (
@@ -55,6 +55,16 @@ function calculateVariable(paycheck, fixed, savings) {
         return 0;
     } else {
         return calculation;
+    }
+}
+
+function formatSavings(savings) {
+    savings = parseInt(savings);
+
+    if (isNaN(savings)) {
+        return 0;
+    } else {
+        return savings;
     }
 }
 
